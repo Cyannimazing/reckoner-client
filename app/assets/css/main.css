@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
 
 @theme {
   --color-brand-50: #f7f5fa;
@@ -28,7 +29,10 @@
 
   --color-highlight: #a0d2eb;
 
-  --font-serif: 'Playfair Display', Georgia, serif;
+  /* Headers: Times New Roman */
+  --font-serif: 'Times New Roman', Times, serif;
+  /* Body / General: Kanit */
+  --font-sans: 'Kanit', sans-serif;
 }
 
 @layer base {
@@ -41,6 +45,7 @@
   }
   
   body {
+    font-family: 'Kanit', sans-serif;
     @apply min-h-screen bg-brand-neutral-50 text-brand-neutral-900 antialiased dark:bg-brand-neutral-950 dark:text-brand-neutral-100;
   }
 

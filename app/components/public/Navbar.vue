@@ -7,9 +7,9 @@ const mobileMenuOpen = ref(false)
 
 const navigation = [
   { label: 'Home', to: '/' },
-  { label: 'Services', to: '/#services', hasDropdown: true },
-  { label: 'Projects', to: '/#projects', hasDropdown: true },
-  { label: 'Blogs', to: '/#blogs', hasDropdown: true },
+  { label: 'Services', to: '/#services' },
+  { label: 'Projects', to: '/#projects' },
+  { label: 'Blogs', to: '/#blogs' },
 ]
 </script>
 
@@ -18,9 +18,9 @@ const navigation = [
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b shadow-sm"
     :class="scrolled
       ? 'bg-white border-gray-100'
-      : 'bg-white/95 backdrop-blur-md border-white/20'"
+      : 'bg-white border-gray-100'"
   >
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       <div class="flex items-center justify-between h-[72px]">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center gap-3 cursor-pointer shrink-0">
@@ -44,20 +44,16 @@ const navigation = [
           <template v-for="item in navigation" :key="item.to">
             <NuxtLink
               :to="item.to"
-              class="flex items-center gap-1 px-5 py-2.5 text-[15px] font-semibold rounded-xl transition-colors cursor-pointer text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+              class="group nav-link relative px-5 py-2.5 text-[15px] font-semibold rounded-xl transition-all duration-300 cursor-pointer text-gray-600 hover:text-green-700 hover:bg-green-100"
             >
               {{ item.label }}
-              <UIcon
-                v-if="item.hasDropdown"
-                name="i-heroicons-chevron-down"
-                class="h-4 w-4 text-gray-400"
-              />
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-green-700 rounded-full transition-all duration-300 group-hover:w-1/2"></span>
             </NuxtLink>
           </template>
         </div>
 
         <!-- CTA Button -->
-        <div class="hidden lg:block ml-4">
+        <div class="hidden lg:block ml-4 lg:ml-8">
           <NuxtLink
             to="/#contact"
             class="px-6 py-3 text-[15px] font-semibold rounded-xl transition-all cursor-pointer bg-green-700 hover:bg-green-800 text-white shadow-md shadow-green-900/10"
