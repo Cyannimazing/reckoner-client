@@ -157,7 +157,7 @@ onUnmounted(() => {
               <!-- Left: ID & Title -->
               <div class="max-w-2xl">
                 <span class="block font-sans text-lg text-green-400 font-bold mb-3 sm:mb-4">{{ currentProject?.id }}</span>
-                <h3 class="font-sans font-bold text-3xl sm:text-4xl lg:text-[64px] leading-tight tracking-tight">
+                <h3 class="font-serif font-light text-3xl sm:text-4xl lg:text-[64px] leading-tight tracking-tight">
                   {{ currentProject?.title }}
                 </h3>
               </div>
