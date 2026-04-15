@@ -5,7 +5,7 @@
       <!-- Section Header -->
       <div class="text-center mb-16 lg:mb-20">
         <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Find Us</span>
-        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] text-gray-900 leading-tight tracking-tight">
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
           Get In Touch
         </h2>
       </div>

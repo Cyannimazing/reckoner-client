@@ -38,7 +38,7 @@ const serviceKeywords = [
           </div>
 
           <!-- Heading -->
-          <h1 class="font-serif text-5xl sm:text-[64px] lg:text-[76px] font-normal text-white leading-[1.1] sm:leading-[1.08] tracking-tight mb-8 sm:mb-10">
+          <h1 class="font-serif text-5xl sm:text-[64px] lg:text-[76px] font-light text-white leading-[1.1] sm:leading-[1.08] tracking-tight mb-8 sm:mb-10">
             Land Surveying and
             <br class="hidden sm:block" />Mapping Solutions
           </h1>

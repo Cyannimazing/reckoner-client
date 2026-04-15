@@ -63,14 +63,18 @@ const touchStartX = ref(0)
 const touchEndX = ref(0)
 
 const onTouchStart = (e: TouchEvent) => {
-  touchStartX.value = e.changedTouches[0].screenX
-  pauseTimer()
+  if (e.changedTouches[0]) {
+    touchStartX.value = e.changedTouches[0].screenX
+    pauseTimer()
+  }
 }
 
 const onTouchEnd = (e: TouchEvent) => {
-  touchEndX.value = e.changedTouches[0].screenX
-  handleSwipe()
-  resumeTimer()
+  if (e.changedTouches[0]) {
+    touchEndX.value = e.changedTouches[0].screenX
+    handleSwipe()
+    resumeTimer()
+  }
 }
 
 const handleSwipe = () => {
@@ -98,7 +102,7 @@ onUnmounted(() => {
       <!-- Section Header -->
       <div class="text-center mb-16 lg:mb-24">
         <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">What We Do</span>
-        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] text-gray-900 leading-tight tracking-tight">
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
           Projects
         </h2>
       </div>

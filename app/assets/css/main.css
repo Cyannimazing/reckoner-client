@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/albra-display-trial');
 @import "tailwindcss";
 @import "@nuxt/ui";
 
@@ -28,8 +29,8 @@
 
   --color-highlight: #a0d2eb;
 
-  /* Headers: Times New Roman */
-  --font-serif: 'Times New Roman', Times, serif;
+  /* Headers: Albra Display TRIAL */
+  --font-serif: 'Albra Display TRIAL', Times, serif;
   /* Body / General: Kanit */
   --font-sans: 'Kanit', sans-serif;
 }

@@ -57,7 +57,7 @@ const services = [
       <!-- Section Header -->
       <div class="text-center mb-16 lg:mb-24">
         <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">What We Offer</span>
-        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] text-gray-900 leading-tight tracking-tight">
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
           Our Services
         </h2>
       </div>
