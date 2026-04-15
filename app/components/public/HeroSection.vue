@@ -38,8 +38,8 @@ const serviceKeywords = [
       <div class="relative z-10 flex-1 flex flex-col justify-center max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 w-full py-12">
         <div class="max-w-full lg:max-w-5xl">
 
-          <!-- Label -->
-          <div class="mb-10 reveal-item">
+          <!-- Label (Hidden on small mobile to save space) -->
+          <div class="mb-6 sm:mb-10 reveal-item hidden sm:block">
             <span class="text-green-400 text-[13px] font-semibold uppercase tracking-[0.25em]">
               Licensed Geodetic Engineers
             </span>
