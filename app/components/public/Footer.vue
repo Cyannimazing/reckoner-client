@@ -29,7 +29,7 @@ const socials = [
   <footer class="bg-gray-950 text-gray-300">
 
     <!-- Main Footer Grid -->
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20 pb-12">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 pt-20 pb-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
         <!-- Col 1: Brand -->
@@ -140,7 +140,7 @@ const socials = [
 
     <!-- Divider -->
     <div class="border-t border-gray-800">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
 
         <!-- Copyright -->
         <p class="text-[13px] text-gray-500 text-center sm:text-left">

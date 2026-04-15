@@ -1,9 +1,9 @@
 <template>
-  <section id="contact" class="bg-white py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+  <section id="contact" class="bg-gray-50 py-12 lg:py-16 border-t border-gray-100">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6">
 
       <!-- Section Header -->
-      <div class="text-center mb-16 lg:mb-20">
+      <div class="text-center mb-12 lg:mb-16">
         <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Find Us</span>
         <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
           Get In Touch
@@ -34,36 +34,36 @@
 
           <!-- Highlights -->
           <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
-              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5">
-                <UIcon name="i-heroicons-shield-check" class="h-5 w-5 text-green-700" />
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100/80 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group/card cursor-default">
+              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/card:bg-green-700 transition-colors">
+                <UIcon name="i-heroicons-shield-check" class="h-5 w-5 text-green-700 group-hover/card:text-white transition-colors" />
               </div>
               <div>
                 <p class="text-[13px] font-bold text-gray-900">PRC Licensed</p>
                 <p class="text-[12px] text-gray-500 mt-0.5">Certified Geodetic Engineers</p>
               </div>
             </div>
-            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
-              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5">
-                <UIcon name="i-heroicons-clock" class="h-5 w-5 text-green-700" />
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100/80 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group/card cursor-default">
+              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/card:bg-green-700 transition-colors">
+                <UIcon name="i-heroicons-clock" class="h-5 w-5 text-green-700 group-hover/card:text-white transition-colors" />
               </div>
               <div>
                 <p class="text-[13px] font-bold text-gray-900">25+ Years</p>
                 <p class="text-[12px] text-gray-500 mt-0.5">Industry Experience</p>
               </div>
             </div>
-            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
-              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5">
-                <UIcon name="i-heroicons-document-check" class="h-5 w-5 text-green-700" />
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100/80 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group/card cursor-default">
+              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/card:bg-green-700 transition-colors">
+                <UIcon name="i-heroicons-document-check" class="h-5 w-5 text-green-700 group-hover/card:text-white transition-colors" />
               </div>
               <div>
                 <p class="text-[13px] font-bold text-gray-900">LRA Accredited</p>
                 <p class="text-[12px] text-gray-500 mt-0.5">Land Registration Authority</p>
               </div>
             </div>
-            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
-              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5">
-                <UIcon name="i-heroicons-map" class="h-5 w-5 text-green-700" />
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100/80 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group/card cursor-default">
+              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/card:bg-green-700 transition-colors">
+                <UIcon name="i-heroicons-map" class="h-5 w-5 text-green-700 group-hover/card:text-white transition-colors" />
               </div>
               <div>
                 <p class="text-[13px] font-bold text-gray-900">147+ Projects</p>
@@ -113,7 +113,7 @@
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Reckoner Geospatial Office Location"
-              class="w-full h-full"
+              class="w-full h-full grayscale contrast-[1.1] opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-700"
             ></iframe>
           </div>
 

@@ -1,9 +1,9 @@
 <template>
-  <section class="bg-white pt-16 pb-20 sm:pb-24 lg:pt-24 lg:pb-32 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex flex-col lg:block">
+  <section class="bg-white pt-12 pb-24 lg:pt-16 lg:pb-32 relative">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 relative flex flex-col lg:block">
       
       <!-- Aerial / Topo Map Image Container -->
-      <div class="relative w-full overflow-hidden shadow-2xl aspect-[16/9] lg:aspect-[21/9] bg-gray-100">
+      <div class="relative w-full overflow-hidden shadow-2xl rounded-2xl aspect-[16/9] lg:aspect-[21/9] bg-gray-100">
         <!-- Using a placeholder aerial map/survey image to match Figma topo feel -->
         <img 
           src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=2000" 
@@ -15,32 +15,35 @@
       </div>
       
       <!-- Stats Banner — Anchored securely over the topo image -->
-      <div class="relative lg:absolute z-20 -mt-16 sm:-mt-24 lg:mt-0 lg:bottom-0 w-full lg:w-auto lg:translate-y-1/2 lg:max-w-5xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] self-center items-center mx-auto lg:left-8">
-        <div class="flex flex-col lg:flex-row w-full bg-white">
-
-          <!-- Black Stat -->
-          <div class="bg-[#0b0c10] text-white flex flex-col justify-center px-8 py-7 lg:px-10 lg:py-10 lg:w-[220px] shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800">
-            <span class="font-sans text-5xl lg:text-[64px] font-bold text-white leading-none mb-2 tracking-tight">
+      <div class="relative lg:absolute z-20 -mt-8 sm:-mt-12 lg:mt-0 lg:bottom-0 w-full lg:max-w-5xl self-center items-center mx-auto lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-1/2">
+        <div class="flex flex-col lg:flex-row w-full gap-4 lg:gap-6 items-stretch">
+          
+          <!-- Stats Card (Black & Green) -->
+          <div class="flex flex-col lg:flex-row shadow-[0_15px_50px_rgba(0,0,0,0.15)] rounded-xl overflow-hidden shrink-0">
+            <!-- Black Stat -->
+          <div class="bg-[#0b0c10] text-white flex flex-row lg:flex-col items-center justify-center gap-4 lg:gap-1 px-8 py-5 lg:px-14 lg:py-4 lg:w-auto shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800">
+            <span class="font-sans text-4xl lg:text-5xl font-bold text-white leading-none tracking-tight">
               147
             </span>
-            <span class="font-sans text-[10px] font-bold tracking-[0.25em] uppercase text-gray-400">
+            <span class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">
               Completed Projects
             </span>
           </div>
 
-          <!-- Red Stat -->
-          <div class="bg-[#B91C1C] text-white flex flex-col justify-center px-8 py-7 lg:px-10 lg:py-10 lg:w-[220px] shrink-0">
-            <span class="font-sans text-5xl lg:text-[64px] font-bold text-white leading-none mb-2 tracking-tight">
-              25<span class="text-4xl ml-1">+</span>
+          <!-- Accent Stat (Deep Red) -->
+          <div class="bg-red-900 text-white flex flex-row lg:flex-col items-center justify-center gap-4 lg:gap-1 px-8 py-5 lg:px-14 lg:py-4 lg:w-auto shrink-0">
+            <span class="font-sans text-4xl lg:text-5xl font-bold text-white leading-none tracking-tight">
+              25<span class="text-3xl ml-0.5">+</span>
             </span>
-            <span class="font-sans text-[10px] font-bold tracking-[0.25em] uppercase text-red-100">
+            <span class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-red-100">
               Years Experience
             </span>
           </div>
+        </div>
 
-          <!-- Quote -->
-          <div class="bg-white flex-1 flex items-center px-8 py-7 lg:px-12 lg:py-10">
-            <p class="text-gray-700 text-[14px] lg:text-[16px] leading-[1.8] font-medium max-w-xl">
+        <!-- Quote Card (White) -->
+        <div class="bg-white flex-1 flex items-center px-8 py-5 lg:px-12 lg:py-4 shadow-[0_15px_50px_rgba(0,0,0,0.08)] rounded-xl border border-gray-100/50">
+          <p class="text-gray-700 text-[12px] lg:text-[14px] leading-relaxed font-medium">
               "We provide accurate and reliable land surveying solutions, helping our clients navigate their projects
               with confidence and ensuring a positive impact on the communities we serve."
             </p>

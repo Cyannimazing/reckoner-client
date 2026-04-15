@@ -96,11 +96,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="projects" class="bg-white py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="projects" class="bg-white py-12 lg:py-16">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6">
 
       <!-- Section Header -->
-      <div class="text-center mb-16 lg:mb-24">
+      <div class="text-center mb-12 lg:mb-16">
         <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">What We Do</span>
         <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
           Projects

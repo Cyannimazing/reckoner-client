@@ -15,7 +15,7 @@ const serviceKeywords = [
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop&q=80"
+          src="~/assets/Images/heroImage.jfif"
           alt="Surveying and construction site"
           class="w-full h-full object-cover"
         />
@@ -27,7 +27,7 @@ const serviceKeywords = [
       <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-green-600 z-10 hidden lg:block"></div>
 
       <!-- Hero Content -->
-      <div class="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-12">
+      <div class="relative z-10 flex-1 flex flex-col justify-center max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 w-full py-12">
         <div class="max-w-full lg:max-w-5xl">
 
           <!-- Label -->

@@ -15,26 +15,29 @@ const navigation = [
 
 <template>
   <header
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b shadow-sm"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
     :class="scrolled
-      ? 'bg-white border-gray-100'
-      : 'bg-white border-gray-100'"
+      ? 'bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm'
+      : 'bg-transparent border-b border-transparent'"
   >
-    <nav class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <nav class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
       <div class="flex items-center justify-between h-[72px]">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center gap-3 cursor-pointer shrink-0">
           <div
-            class="flex h-11 w-11 items-center justify-center rounded-full bg-green-700 text-white shadow-sm transition-all duration-300"
+            class="flex h-11 w-11 items-center justify-center rounded-full bg-green-700 text-white shadow-lg transition-all duration-500"
+            :class="scrolled ? 'scale-90' : 'scale-100'"
           >
             <UIcon name="i-heroicons-globe-americas" class="h-6 w-6" />
           </div>
           <div class="leading-tight">
             <span
-              class="text-[19px] font-bold tracking-tight text-gray-900"
+              class="text-[19px] font-bold tracking-tight transition-colors duration-500"
+              :class="scrolled ? 'text-gray-900' : 'text-white'"
             >Reckoner</span>
             <span
-              class="block text-[11px] font-bold tracking-widest text-green-700"
+              class="block text-[11px] font-bold tracking-widest transition-colors duration-500"
+              :class="scrolled ? 'text-green-700' : 'text-green-400'"
             >GEOSPATIAL</span>
           </div>
         </NuxtLink>
@@ -44,10 +47,13 @@ const navigation = [
           <template v-for="item in navigation" :key="item.to">
             <NuxtLink
               :to="item.to"
-              class="group nav-link relative px-5 py-2.5 text-[15px] font-semibold rounded-xl transition-all duration-300 cursor-pointer text-gray-600 hover:text-green-700 hover:bg-green-100"
+              class="group nav-link relative px-5 py-2.5 text-[15px] font-semibold rounded-xl transition-all duration-500 cursor-pointer"
+              :class="scrolled 
+                ? 'text-gray-600 hover:text-green-700 hover:bg-green-50' 
+                : 'text-white/90 hover:text-white hover:bg-white/10'"
             >
               {{ item.label }}
-              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-green-700 rounded-full transition-all duration-300 group-hover:w-1/2"></span>
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-green-500 rounded-full transition-all duration-300 group-hover:w-1/2"></span>
             </NuxtLink>
           </template>
         </div>
@@ -64,7 +70,8 @@ const navigation = [
 
         <!-- Mobile Menu Button -->
         <button
-          class="lg:hidden p-2 rounded-full cursor-pointer transition-colors text-gray-700 hover:bg-gray-100"
+          class="lg:hidden p-2 rounded-full cursor-pointer transition-colors"
+          :class="scrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'"
           @click="mobileMenuOpen = !mobileMenuOpen"
         >
           <UIcon :name="mobileMenuOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'" class="h-6 w-6" />
