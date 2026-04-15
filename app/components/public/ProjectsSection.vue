@@ -59,6 +59,29 @@ const prevSlide = () => {
   resetTimer()
 }
 
+const touchStartX = ref(0)
+const touchEndX = ref(0)
+
+const onTouchStart = (e: TouchEvent) => {
+  touchStartX.value = e.changedTouches[0].screenX
+  pauseTimer()
+}
+
+const onTouchEnd = (e: TouchEvent) => {
+  touchEndX.value = e.changedTouches[0].screenX
+  handleSwipe()
+  resumeTimer()
+}
+
+const handleSwipe = () => {
+  const swipeThreshold = 40
+  if (touchEndX.value < touchStartX.value - swipeThreshold) {
+    nextSlide()
+  } else if (touchEndX.value > touchStartX.value + swipeThreshold) {
+    prevSlide()
+  }
+}
+
 onMounted(() => {
   startTimer()
 })
@@ -82,9 +105,11 @@ onUnmounted(() => {
 
       <!-- Carousel Container -->
       <div 
-        class="relative w-full aspect-[4/3] lg:aspect-[21/9] overflow-hidden rounded-xl bg-gray-900 shadow-2xl group"
+        class="relative w-full aspect-[4/3] lg:aspect-[21/9] overflow-hidden rounded-xl bg-gray-900 shadow-2xl group touch-pan-y"
         @mouseenter="pauseTimer"
         @mouseleave="resumeTimer"
+        @touchstart="onTouchStart"
+        @touchend="onTouchEnd"
       >
         
         <!-- Slides -->
@@ -127,14 +152,14 @@ onUnmounted(() => {
             <div :key="currentIndex" class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-12 lg:gap-24">
               <!-- Left: ID & Title -->
               <div class="max-w-2xl">
-                <span class="block font-sans text-lg text-green-400 font-bold mb-4">{{ currentProject?.id }}</span>
-                <h3 class="font-sans font-bold text-4xl sm:text-5xl lg:text-[64px] leading-tight tracking-tight">
+                <span class="block font-sans text-lg text-green-400 font-bold mb-3 sm:mb-4">{{ currentProject?.id }}</span>
+                <h3 class="font-sans font-bold text-3xl sm:text-4xl lg:text-[64px] leading-tight tracking-tight">
                   {{ currentProject?.title }}
                 </h3>
               </div>
 
               <!-- Right: About description -->
-              <div class="max-w-md lg:mb-4">
+              <div class="max-w-md hidden lg:block lg:mb-4">
                 <h4 class="font-sans text-sm font-bold tracking-[0.2em] uppercase text-white mb-3">About</h4>
                 <p class="font-sans text-gray-300 text-sm sm:text-base leading-relaxed">
                   {{ currentProject?.description }}
@@ -143,8 +168,8 @@ onUnmounted(() => {
             </div>
           </Transition>
 
-          <!-- Bottom Area: Controls -->
-          <div class="flex justify-between items-center mt-6 lg:mt-0 pointer-events-auto">
+          <!-- Bottom Area: Controls (Desktop Only) -->
+          <div class="hidden lg:flex justify-between items-center pointer-events-auto">
             
             <!-- Browse All Link -->
             <a href="#" class="group/btn cursor-pointer flex items-center gap-4 text-white hover:text-green-400 transition-colors duration-700 ease-out">
@@ -175,6 +200,19 @@ onUnmounted(() => {
             </div>
 
           </div>
+
+          <!-- Mobile Pagination Dots (Mobile Only) -->
+          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex lg:hidden items-center gap-2 pointer-events-auto z-30">
+            <button 
+              v-for="(_, index) in projects" 
+              :key="index"
+              @click="currentIndex = index; resetTimer()"
+              class="h-2 rounded-full transition-all duration-500 ease-out focus:outline-none"
+              :class="currentIndex === index ? 'w-8 bg-green-500' : 'w-2 bg-white/40 hover:bg-white/80'"
+              :aria-label="`Jump to project ${index + 1}`"
+            ></button>
+          </div>
+
 
         </div>
 

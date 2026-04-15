@@ -44,12 +44,12 @@ const serviceKeywords = [
           </h1>
 
           <!-- Service Keywords -->
-          <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 sm:mb-16 max-w-3xl">
+          <div class="flex flex-wrap items-center gap-y-1.5 gap-x-2 sm:gap-y-2 sm:gap-x-3 mb-12 sm:mb-16 max-w-3xl">
             <template v-for="(keyword, index) in serviceKeywords" :key="keyword">
-              <span class="px-4 py-2 sm:px-0 sm:py-0 bg-white/15 sm:bg-transparent rounded-full border border-white/20 sm:border-none backdrop-blur-md sm:backdrop-blur-none text-white/95 text-[13px] sm:text-lg lg:text-[20px] font-medium leading-none sm:leading-relaxed">
+              <span class="text-white/95 text-[15px] sm:text-lg lg:text-[20px] font-medium leading-relaxed">
                 {{ keyword }}
               </span>
-              <span v-if="index < serviceKeywords.length - 1" class="hidden sm:block text-green-500/80 font-medium mx-1 sm:mx-2 lg:mx-3">|</span>
+              <span v-if="index < serviceKeywords.length - 1" class="text-green-500/80 font-medium mx-0.5 sm:mx-1 lg:mx-2">|</span>
             </template>
           </div>
 
