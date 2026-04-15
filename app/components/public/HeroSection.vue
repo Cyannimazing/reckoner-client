@@ -38,41 +38,35 @@ const serviceKeywords = [
           </div>
 
           <!-- Heading -->
-          <h1 class="font-serif text-[48px] sm:text-[64px] lg:text-[76px] font-normal text-white leading-[1.08] tracking-tight mb-10">
+          <h1 class="font-serif text-5xl sm:text-[64px] lg:text-[76px] font-normal text-white leading-[1.1] sm:leading-[1.08] tracking-tight mb-8 sm:mb-10">
             Land Surveying and
-            <br />Mapping Solutions
+            <br class="hidden sm:block" />Mapping Solutions
           </h1>
 
           <!-- Service Keywords -->
-          <div class="text-[17px] sm:text-[20px] text-gray-300/95 leading-relaxed mb-16 w-full space-y-3">
-            <p>
-              <template v-for="(keyword, index) in serviceKeywords.slice(0, 6)" :key="keyword">
-                <span class="text-white/90 font-medium">{{ keyword }}</span>
-                <span v-if="index < 5" class="text-green-500/80 mx-2">|</span>
-              </template>
-            </p>
-            <p>
-              <template v-for="(keyword, index) in serviceKeywords.slice(6)" :key="keyword">
-                <span class="text-white/90 font-medium">{{ keyword }}</span>
-                <span v-if="index < serviceKeywords.slice(6).length - 1" class="text-green-500/80 mx-2">|</span>
-              </template>
-            </p>
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-12 sm:mb-16 max-w-3xl">
+            <template v-for="(keyword, index) in serviceKeywords" :key="keyword">
+              <span class="px-4 py-2 sm:px-0 sm:py-0 bg-white/15 sm:bg-transparent rounded-full border border-white/20 sm:border-none backdrop-blur-md sm:backdrop-blur-none text-white/95 text-[13px] sm:text-lg lg:text-[20px] font-medium leading-none sm:leading-relaxed">
+                {{ keyword }}
+              </span>
+              <span v-if="index < serviceKeywords.length - 1" class="hidden sm:block text-green-500/80 font-medium mx-1 sm:mx-2 lg:mx-3">|</span>
+            </template>
           </div>
 
           <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row items-start gap-4">
-            <a
-              href="#contact"
-              class="inline-flex items-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white text-[16px] font-semibold rounded-xl shadow-xl shadow-green-900/40 hover:shadow-green-800/60 transition-all hover:-translate-y-0.5 cursor-pointer"
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 sm:gap-6 w-full sm:w-auto">
+            <NuxtLink
+              to="/#contact"
+              class="inline-flex justify-center items-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white text-[16px] font-semibold rounded-xl shadow-xl shadow-green-900/40 hover:shadow-green-800/60 transition-all hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto text-center"
             >
               Get a quote
-            </a>
-            <a
-              href="#services"
-              class="inline-flex items-center px-8 py-4 text-white/90 hover:text-white text-[16px] font-medium rounded-xl border border-white/25 hover:border-white/40 hover:bg-white/10 transition-all hover:-translate-y-0.5 cursor-pointer"
+            </NuxtLink>
+            <NuxtLink
+              to="/#services"
+              class="inline-flex justify-center items-center px-8 py-4 text-white hover:text-white text-[16px] font-medium rounded-xl border border-white/30 hover:border-white/60 hover:bg-white/10 backdrop-blur-sm transition-all hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto text-center"
             >
               Our Services
-            </a>
+            </NuxtLink>
           </div>
 
         </div>

@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-white pt-20 pb-32 lg:pt-24 lg:pb-40 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+  <section class="bg-white pt-16 pb-20 sm:pb-24 lg:pt-24 lg:pb-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex flex-col lg:block">
       
       <!-- Aerial / Topo Map Image Container -->
       <div class="relative w-full overflow-hidden shadow-2xl aspect-[16/9] lg:aspect-[21/9] bg-gray-100">
@@ -15,7 +15,7 @@
       </div>
       
       <!-- Stats Banner — Anchored securely over the topo image -->
-      <div class="absolute bottom-0 left-4 sm:left-6 lg:left-8 translate-y-1/2 z-20 w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] lg:w-auto lg:max-w-5xl shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
+      <div class="relative lg:absolute z-20 -mt-16 sm:-mt-24 lg:mt-0 lg:bottom-0 w-full lg:w-auto lg:translate-y-1/2 lg:max-w-5xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] self-center items-center mx-auto lg:left-8">
         <div class="flex flex-col lg:flex-row w-full bg-white">
 
           <!-- Black Stat -->

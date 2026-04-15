@@ -73,30 +73,35 @@ const navigation = [
 
       <!-- Mobile Menu -->
       <Transition
-        enter-active-class="transition duration-200 ease-out"
-        enter-from-class="opacity-0 -translate-y-2"
-        enter-to-class="opacity-100 translate-y-0"
-        leave-active-class="transition duration-150 ease-in"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 -translate-y-2"
+        enter-active-class="transition duration-300 ease-out"
+        enter-from-class="opacity-0 -translate-y-4 scale-95"
+        enter-to-class="opacity-100 translate-y-0 scale-100"
+        leave-active-class="transition duration-200 ease-in"
+        leave-from-class="opacity-100 translate-y-0 scale-100"
+        leave-to-class="opacity-0 -translate-y-4 scale-95"
       >
-        <div v-if="mobileMenuOpen" class="lg:hidden bg-white rounded-xl shadow-xl p-4 mb-2 border border-gray-100">
-          <NuxtLink
-            v-for="item in navigation"
-            :key="item.to"
-            :to="item.to"
-            class="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-green-700 hover:bg-green-50 rounded-lg cursor-pointer"
-            @click="mobileMenuOpen = false"
-          >
-            {{ item.label }}
-          </NuxtLink>
-          <NuxtLink
-            to="/#contact"
-            class="block mt-3 text-center px-4 py-3 bg-green-700 hover:bg-green-800 text-white text-sm font-semibold rounded-lg cursor-pointer"
-            @click="mobileMenuOpen = false"
-          >
-            Contact Us
-          </NuxtLink>
+        <div v-if="mobileMenuOpen" class="lg:hidden absolute top-full left-4 right-4 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl p-6 border border-gray-200/60 mt-2 z-50">
+          <div class="flex flex-col space-y-2">
+            <NuxtLink
+              v-for="item in navigation"
+              :key="item.to"
+              :to="item.to"
+              class="block px-4 py-3.5 text-lg font-bold text-gray-800 hover:text-green-700 hover:bg-green-50/80 rounded-xl transition-all cursor-pointer"
+              @click="mobileMenuOpen = false"
+            >
+              {{ item.label }}
+            </NuxtLink>
+            
+            <div class="h-px bg-gray-100 my-2"></div>
+            
+            <NuxtLink
+              to="/#contact"
+              class="block w-full text-center px-4 py-4 mt-2 bg-green-700 hover:bg-green-800 text-white text-lg font-bold rounded-xl shadow-lg shadow-green-900/20 transition-all cursor-pointer"
+              @click="mobileMenuOpen = false"
+            >
+              Contact Us
+            </NuxtLink>
+          </div>
         </div>
       </Transition>
     </nav>
