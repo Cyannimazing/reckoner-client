@@ -10,5 +10,6 @@ definePageMeta({
     <PublicStatsSection />
     <PublicServicesSection />
     <PublicProjectsSection />
+    <PublicContactSection />
   </div>
 </template>
