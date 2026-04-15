@@ -1,153 +1,96 @@
 <template>
-  <section id="contact" class="bg-gray-50 py-12 lg:py-16 border-t border-gray-100">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6">
+  <section id="contact" class="bg-gray-50 py-10 lg:py-14 border-t border-gray-100 relative overflow-hidden">
+    
+    <!-- Background Wrapper with its own clipping to prevent bleeding -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <!-- Unique Geodetic Land-Pattern Background (Parallax Layer) -->
+      <div class="absolute -inset-y-40 inset-x-0 opacity-[0.08] mix-blend-multiply parallax-layer" data-parallax-speed="-0.05">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover filter grayscale contrast-125 brightness-110" />
+      </div>
 
-      <!-- Section Header -->
-      <div class="text-center mb-12 lg:mb-16">
-        <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Find Us</span>
-        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
+      <!-- Architectural Grid Overlay (Parallax Layer) -->
+      <div class="absolute -inset-y-40 inset-x-0 opacity-[0.03] parallax-layer" data-parallax-speed="-0.02"
+           style="background-image: linear-gradient(#15803d 1px, transparent 1px), linear-gradient(90deg, #15803d 1px, transparent 1px); background-size: 40px 40px;">
+      </div>
+    </div>
+
+    <div class="max-w-[1440px] mx-auto px-4 relative z-10 reveal-section">
+
+      <!-- Section Header (Minimized for Insert Feel) -->
+      <div class="text-center mb-8 reveal-item">
+        <span class="font-sans text-green-700 text-[10px] font-bold tracking-[0.4em] uppercase mb-2 block">Reach Us</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 tracking-tight">
           Get In Touch
         </h2>
       </div>
 
-      <!-- Two-column layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-
-        <!-- Left: Company info + highlights + socials -->
-        <div class="flex flex-col gap-8">
-
-          <!-- Logo + name -->
-          <div class="flex items-center gap-3">
-            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-green-700 text-white shadow-md shrink-0">
-              <UIcon name="i-heroicons-globe-americas" class="h-6 w-6" />
-            </div>
-            <div class="leading-tight">
-              <span class="text-[20px] font-bold tracking-tight text-gray-900">Reckoner</span>
-              <span class="block text-[11px] font-bold tracking-widest text-green-700">GEOSPATIAL</span>
-            </div>
-          </div>
-
-          <!-- Description -->
-          <p class="text-[15px] text-gray-600 leading-relaxed max-w-md">
-            We are a team of licensed geodetic engineers committed to delivering accurate, reliable, and timely survey services across residential, commercial, and government sectors.
-          </p>
-
-          <!-- Highlights -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100/80 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group/card cursor-default">
-              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/card:bg-green-700 transition-colors">
-                <UIcon name="i-heroicons-shield-check" class="h-5 w-5 text-green-700 group-hover/card:text-white transition-colors" />
-              </div>
-              <div>
-                <p class="text-[13px] font-bold text-gray-900">PRC Licensed</p>
-                <p class="text-[12px] text-gray-500 mt-0.5">Certified Geodetic Engineers</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100/80 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group/card cursor-default">
-              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/card:bg-green-700 transition-colors">
-                <UIcon name="i-heroicons-clock" class="h-5 w-5 text-green-700 group-hover/card:text-white transition-colors" />
-              </div>
-              <div>
-                <p class="text-[13px] font-bold text-gray-900">25+ Years</p>
-                <p class="text-[12px] text-gray-500 mt-0.5">Industry Experience</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100/80 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group/card cursor-default">
-              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/card:bg-green-700 transition-colors">
-                <UIcon name="i-heroicons-document-check" class="h-5 w-5 text-green-700 group-hover/card:text-white transition-colors" />
-              </div>
-              <div>
-                <p class="text-[13px] font-bold text-gray-900">LRA Accredited</p>
-                <p class="text-[12px] text-gray-500 mt-0.5">Land Registration Authority</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100/80 hover:bg-white hover:border-green-200 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300 group/card cursor-default">
-              <div class="h-9 w-9 rounded-lg bg-green-700/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/card:bg-green-700 transition-colors">
-                <UIcon name="i-heroicons-map" class="h-5 w-5 text-green-700 group-hover/card:text-white transition-colors" />
-              </div>
-              <div>
-                <p class="text-[13px] font-bold text-gray-900">147+ Projects</p>
-                <p class="text-[12px] text-gray-500 mt-0.5">Completed Nationwide</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Social / Contact icons -->
-          <div class="flex items-center gap-3 pt-2">
-            <a
-              href="mailto:info@reckoner.com"
-              aria-label="Email"
-              class="group flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:border-green-600 hover:bg-green-50 hover:text-green-700 transition-all duration-200"
-            >
-              <UIcon name="i-heroicons-envelope" class="h-4.5 w-4.5" />
-            </a>
-            <a
-              href="tel:+00000000000"
-              aria-label="Phone"
-              class="group flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:border-green-600 hover:bg-green-50 hover:text-green-700 transition-all duration-200"
-            >
-              <UIcon name="i-heroicons-phone" class="h-4.5 w-4.5" />
-            </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              class="group flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:border-green-600 hover:bg-green-50 hover:text-green-700 transition-all duration-200"
-            >
-              <UIcon name="i-heroicons-share" class="h-4.5 w-4.5" />
-            </a>
-          </div>
-
+      <!-- Symmetrical Split Hub (Compact Insert Height) -->
+      <div class="flex flex-col lg:flex-row bg-white rounded-xl overflow-hidden shadow-2xl border border-gray-100 min-h-[300px] lg:h-[320px] w-full reveal-item delay-100">
+        
+        <!-- Left: Full-Height Map -->
+        <div class="lg:w-3/5 relative min-h-[300px] lg:min-h-full border-r border-gray-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d964.5!2d121.0!3d14.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec38b%3A0xa26bc3a3de5a4ef5!2sMetro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            title="Location Map"
+            class="absolute inset-0 w-full h-full"
+          ></iframe>
         </div>
 
-        <!-- Right: Map + contact details -->
-        <div class="flex flex-col gap-6">
-
-          <!-- Embedded Map -->
-          <div class="w-full rounded-2xl overflow-hidden border border-gray-200 shadow-sm aspect-[4/3] bg-gray-100">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d964.5!2d121.0!3d14.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec38b%3A0xa26bc3a3de5a4ef5!2sMetro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Reckoner Geospatial Office Location"
-              class="w-full h-full grayscale contrast-[1.1] opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-700"
-            ></iframe>
-          </div>
-
-          <!-- Location + Contact details -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-            <div class="flex items-start gap-4 p-5 rounded-xl border border-gray-100 bg-gray-50">
-              <div class="h-9 w-9 rounded-lg bg-green-700 flex items-center justify-center shrink-0 mt-0.5">
-                <UIcon name="i-heroicons-map-pin" class="h-5 w-5 text-white" />
-              </div>
+        <!-- Right: Simple Contact Data -->
+        <div class="lg:w-2/5 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+          <div class="space-y-6 sm:space-y-8">
+            
+            <!-- Location -->
+            <div class="flex items-start gap-5">
+              <UIcon name="i-heroicons-map-pin" class="h-6 w-6 text-green-700 shrink-0 mt-1" />
               <div>
-                <p class="text-[13px] font-bold text-gray-900 uppercase tracking-wide mb-1">Location</p>
-                <p class="text-[14px] text-gray-600 leading-relaxed">
-                  Metro Manila,<br />Philippines
-                </p>
+                <p class="font-sans text-[10px] font-bold text-green-700/60 uppercase tracking-[0.3em] mb-1">Office Location</p>
+                <p class="font-sans text-lg sm:text-xl text-gray-900 font-medium tracking-tight">Metro Manila, Philippines</p>
               </div>
             </div>
 
-            <div class="flex items-start gap-4 p-5 rounded-xl border border-gray-100 bg-gray-50">
-              <div class="h-9 w-9 rounded-lg bg-green-700 flex items-center justify-center shrink-0 mt-0.5">
-                <UIcon name="i-heroicons-phone" class="h-5 w-5 text-white" />
-              </div>
+            <!-- Contacts -->
+            <div class="flex items-start gap-5">
+              <UIcon name="i-heroicons-phone" class="h-6 w-6 text-green-700 shrink-0 mt-1" />
               <div>
-                <p class="text-[13px] font-bold text-gray-900 uppercase tracking-wide mb-1">Contact Us</p>
-                <a href="tel:+00000000000" class="block text-[14px] text-gray-600 hover:text-green-700 transition-colors">+63 (0) 000 000 000</a>
-                <a href="mailto:info@reckoner.com" class="block text-[14px] text-gray-600 hover:text-green-700 transition-colors mt-0.5">info@reckoner.com</a>
+                <p class="font-sans text-[10px] font-bold text-green-700/60 uppercase tracking-[0.3em] mb-1">Direct Reach</p>
+                <a href="tel:+63000000000" class="block font-sans text-lg sm:text-xl text-gray-900 font-medium tracking-tight hover:text-green-700 transition-colors">+63 (0) 000 000 000</a>
+                <a href="mailto:info@reckoner.com" class="block font-sans text-lg text-gray-600 font-medium tracking-tight hover:text-green-700 transition-colors mt-0.5">info@reckoner.com</a>
+              </div>
+            </div>
+
+            <!-- Social Medias -->
+            <div class="flex items-start gap-5">
+              <UIcon name="i-heroicons-globe-alt" class="h-6 w-6 text-green-700 shrink-0 mt-1" />
+              <div>
+                <p class="font-sans text-[10px] font-bold text-green-700/60 uppercase tracking-[0.4em] mb-3">Professional Channels</p>
+                <div class="flex gap-5">
+                   <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-green-700 transition-all transform hover:-translate-y-1">
+                     <UIcon name="i-simple-icons-linkedin" class="w-6 h-6" />
+                   </a>
+                   <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-green-700 transition-all transform hover:-translate-y-1">
+                     <UIcon name="i-simple-icons-facebook" class="w-6 h-6" />
+                   </a>
+                   <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-green-700 transition-all transform hover:-translate-y-1">
+                     <UIcon name="i-simple-icons-instagram" class="w-6 h-6" />
+                   </a>
+                   <a href="#" aria-label="YouTube" class="text-gray-400 hover:text-green-700 transition-all transform hover:-translate-y-1">
+                     <UIcon name="i-simple-icons-youtube" class="w-6 h-6" />
+                   </a>
+                </div>
               </div>
             </div>
 
           </div>
-
         </div>
 
       </div>
+
     </div>
   </section>
 </template>

@@ -19,6 +19,14 @@ const serviceKeywords = [
           alt="Surveying and construction site"
           class="w-full h-full object-cover"
         />
+        <!-- Coordinate Scan Overlay -->
+        <div class="absolute inset-0 z-1 opacity-[0.05] pointer-events-none" 
+             style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 100px 100px;">
+        </div>
+        <div class="absolute inset-0 z-1 opacity-[0.03] pointer-events-none" 
+             style="background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px;">
+        </div>
+
         <div class="absolute inset-0 bg-gradient-to-r from-gray-950/85 via-gray-900/60 to-gray-900/30"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-gray-950/20"></div>
       </div>
@@ -31,20 +39,20 @@ const serviceKeywords = [
         <div class="max-w-full lg:max-w-5xl">
 
           <!-- Label -->
-          <div class="mb-10">
+          <div class="mb-10 reveal-item">
             <span class="text-green-400 text-[13px] font-semibold uppercase tracking-[0.25em]">
               Licensed Geodetic Engineers
             </span>
           </div>
 
           <!-- Heading -->
-          <h1 class="font-serif text-5xl sm:text-[64px] lg:text-[76px] font-light text-white leading-[1.1] sm:leading-[1.08] tracking-tight mb-8 sm:mb-10">
+          <h1 class="font-serif text-5xl sm:text-[64px] lg:text-[76px] font-light text-white leading-[1.1] sm:leading-[1.08] tracking-tight mb-8 sm:mb-10 reveal-item delay-100">
             Land Surveying and
             <br class="hidden sm:block" />Mapping Solutions
           </h1>
 
           <!-- Service Keywords -->
-          <div class="flex flex-wrap items-center gap-y-1.5 gap-x-1.5 sm:gap-y-2 sm:gap-x-2 mb-12 sm:mb-16 max-w-3xl">
+          <div class="flex flex-wrap items-center gap-y-1.5 gap-x-1.5 sm:gap-y-2 sm:gap-x-2 mb-12 sm:mb-16 max-w-3xl reveal-item delay-200">
             <template v-for="(keyword, index) in serviceKeywords" :key="keyword">
               <span class="text-white/95 text-[15px] sm:text-lg lg:text-[20px] font-medium leading-relaxed">
                 {{ keyword }}
@@ -54,7 +62,7 @@ const serviceKeywords = [
           </div>
 
           <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 sm:gap-6 w-full sm:w-auto">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 sm:gap-6 w-full sm:w-auto reveal-item delay-300">
             <NuxtLink
               to="/#contact"
               class="inline-flex justify-center items-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white text-[16px] font-semibold rounded-xl shadow-xl shadow-green-900/40 hover:shadow-green-800/60 transition-all hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto text-center"

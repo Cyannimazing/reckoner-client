@@ -1,49 +1,60 @@
 <template>
-  <section class="bg-white pt-12 pb-24 lg:pt-16 lg:pb-32 relative">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 relative flex flex-col lg:block">
+  <section class="relative bg-gray-50 pt-16 pb-40 lg:pt-20 lg:pb-32 border-y border-gray-100">
+    
+    <!-- Background Wrapper with its own clipping to prevent bleeding -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <!-- Guaranteed Visibility: Hard-Coded SVG Geometric Grid (Parallax Layer) -->
+      <div class="absolute -inset-y-40 inset-x-0 opacity-[0.6] parallax-layer" data-parallax-speed="-0.1"
+           style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\' viewBox=\'0 0 60 60\'%3E%3Cpath d=\'M0 60 L60 0 M0 0 L60 60\' stroke=\'%2315803d\' stroke-width=\'1.5\' opacity=\'0.2\' fill=\'none\'/%3E%3Crect width=\'60\' height=\'60\' fill=\'none\' stroke=\'%2315803d\' stroke-width=\'0.5\' opacity=\'0.1\'/%3E%3C/svg%3E');">
+      </div>
+    </div>
+    
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 relative w-full">
       
-      <!-- Aerial / Topo Map Image Container -->
-      <div class="relative w-full overflow-hidden shadow-2xl rounded-2xl aspect-[16/9] lg:aspect-[21/9] bg-gray-100">
-        <!-- Using a placeholder aerial map/survey image to match Figma topo feel -->
+      <!-- Symmetrical Banner Insert (Matches Projects/Contact Grid) -->
+      <div class="relative w-full h-[450px] overflow-hidden shadow-2xl rounded-2xl bg-gray-100 group reveal-item">
         <img 
-          src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=2000" 
-          alt="Topographic Aerial Mapping"
-          class="w-full h-full object-cover"
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000" 
+          alt="Precision Geodetic Survey"
+          class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
         />
-        <!-- Subtle dark overlay for contrast -->
-        <div class="absolute inset-0 bg-gray-900/10"></div>
+        
+        <!-- Technical Scanning Grid Overlay -->
+        <div class="absolute inset-0 z-1 pointer-events-none opacity-20" 
+             style="background-image: linear-gradient(rgba(21, 128, 61, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(21, 128, 61, 0.2) 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
+        <div class="absolute inset-0 bg-green-950/10"></div>
+        
+        <!-- Corner Callouts (Refined Typography) -->
+        <div class="absolute top-8 left-10 flex flex-col gap-1.5 opacity-60">
+          <span class="font-mono text-[10px] text-gray-900 font-bold uppercase tracking-[0.2em]">Live Survey Data</span>
+          <div class="w-16 h-[2px] bg-green-700"></div>
+        </div>
+        <div class="absolute top-8 right-10 flex flex-col items-end gap-1.5 opacity-60">
+          <span class="font-mono text-[10px] text-gray-900 font-bold tracking-widest">GS-PROTO-310</span>
+          <div class="w-10 h-[1px] bg-gray-950"></div>
+        </div>
       </div>
       
-      <!-- Stats Banner — Anchored securely over the topo image -->
-      <div class="relative lg:absolute z-20 -mt-8 sm:-mt-12 lg:mt-0 lg:bottom-0 w-full lg:max-w-5xl self-center items-center mx-auto lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-1/2">
-        <div class="flex flex-col lg:flex-row w-full gap-4 lg:gap-6 items-stretch">
+      <!-- Stats Banner — Positioned OUTSIDE to prevent clipping -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20 w-full px-8 sm:px-12">
+        <div class="flex flex-col lg:flex-row w-full max-w-5xl mx-auto gap-4 lg:gap-6 items-center lg:items-stretch justify-center">
           
-          <!-- Stats Card (Black & Green) -->
-          <div class="flex flex-col lg:flex-row shadow-[0_15px_50px_rgba(0,0,0,0.15)] rounded-xl overflow-hidden shrink-0">
-            <!-- Black Stat -->
-          <div class="bg-[#0b0c10] text-white flex flex-row lg:flex-col items-center justify-center gap-4 lg:gap-1 px-8 py-5 lg:px-14 lg:py-4 lg:w-auto shrink-0 border-b lg:border-b-0 lg:border-r border-gray-800">
-            <span class="font-sans text-4xl lg:text-5xl font-bold text-white leading-none tracking-tight">
-              147
-            </span>
-            <span class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">
-              Completed Projects
-            </span>
+          <!-- Stats Group (Proper Mobile Floating Hub) -->
+          <div class="flex flex-col lg:flex-row shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden w-full lg:w-auto shrink-0 reveal-item delay-100">
+            <div class="bg-[#0b0c10]/95 backdrop-blur-sm text-white flex items-center justify-center gap-6 lg:flex-col lg:gap-1 px-8 py-4 lg:px-14 lg:py-4 shrink-0 border-b lg:border-b-0 lg:border-r border-white/10">
+              <span class="font-serif text-3xl lg:text-5xl font-bold text-white leading-none tracking-tight">147</span>
+              <span class="font-sans text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Completed Projects</span>
+            </div>
+            <div class="bg-red-900/95 backdrop-blur-sm text-white flex items-center justify-center gap-6 lg:flex-col lg:gap-1 px-8 py-4 lg:px-14 lg:py-4 shrink-0 reveal-item delay-200">
+              <span class="font-serif text-3xl lg:text-5xl font-bold text-white leading-none tracking-tight">25<span class="text-2xl ml-0.5">+</span></span>
+              <span class="font-sans text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-red-100">Years Experience</span>
+            </div>
           </div>
 
-          <!-- Accent Stat (Deep Red) -->
-          <div class="bg-red-900 text-white flex flex-row lg:flex-col items-center justify-center gap-4 lg:gap-1 px-8 py-5 lg:px-14 lg:py-4 lg:w-auto shrink-0">
-            <span class="font-sans text-4xl lg:text-5xl font-bold text-white leading-none tracking-tight">
-              25<span class="text-3xl ml-0.5">+</span>
-            </span>
-            <span class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-red-100">
-              Years Experience
-            </span>
-          </div>
-        </div>
-
-        <!-- Quote Card (White) -->
-        <div class="bg-white flex-1 flex items-center px-8 py-5 lg:px-12 lg:py-4 shadow-[0_15px_50px_rgba(0,0,0,0.08)] rounded-xl border border-gray-100/50">
-          <p class="text-gray-700 text-[12px] lg:text-[14px] leading-relaxed font-medium">
+          <!-- Quote Group (Restored Mobile Framing) -->
+          <div class="bg-white/95 backdrop-blur-md flex-1 flex items-center px-8 py-5 lg:px-12 lg:py-4 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl border border-gray-100 w-full max-w-xl reveal-item delay-300">
+            <p class="text-gray-900 text-[11px] lg:text-[14px] leading-relaxed font-medium">
               "We provide accurate and reliable land surveying solutions, helping our clients navigate their projects
               with confidence and ensuring a positive impact on the communities we serve."
             </p>
@@ -51,7 +62,6 @@
 
         </div>
       </div>
-
     </div>
   </section>
 </template>

@@ -51,13 +51,32 @@ const services = [
 
 <template>
   <!-- Very soft corporate gray background -->
-  <section id="services" class="bg-gray-50 py-12 lg:py-16 border-y border-gray-100/50">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6">
+  <section id="services" class="bg-[#F2F4F7] min-h-screen flex flex-col justify-center py-16 lg:py-20 border-y border-gray-200/50 relative overflow-hidden">
+    
+    <!-- High-Impact Architectural Grid Background (Parallax Layer in Clipped Wrapper) -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="absolute -inset-y-40 inset-x-0 opacity-[0.12] parallax-layer" data-parallax-speed="-0.08"
+           style="background-image: radial-gradient(#15803d 1.5px, transparent 1.5px); background-size: 32px 32px;">
+      </div>
+      <div class="absolute -inset-y-40 inset-x-0 opacity-[0.08] parallax-layer" data-parallax-speed="-0.04"
+           style="background-image: linear-gradient(#15803d 1px, transparent 1px), linear-gradient(90deg, #15803d 1px, transparent 1px); background-size: 128px 128px;">
+      </div>
+    </div>
+
+    <!-- Edge Ruler Marks (Left & Right) -->
+    <div class="absolute top-0 bottom-0 left-0 w-8 border-r border-gray-400/20 z-0 opacity-40">
+      <div v-for="i in 10" :key="'l'+i" class="h-px w-3 bg-gray-500 absolute left-0" :style="{ top: (i * 10) + '%' }"></div>
+    </div>
+    <div class="absolute top-0 bottom-0 right-0 w-8 border-l border-gray-400/20 z-0 opacity-40">
+      <div v-for="i in 10" :key="'r'+i" class="h-px w-3 bg-gray-500 absolute right-0" :style="{ top: (i * 10) + '%' }"></div>
+    </div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 relative z-10 reveal-section">
 
       <!-- Section Header -->
-      <div class="text-center mb-12 lg:mb-16">
-        <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">What We Offer</span>
-        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
+      <div class="text-center mb-12 lg:mb-16 relative reveal-item">
+        <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block relative z-10">What We Offer</span>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight relative z-10">
           Our Services
         </h2>
       </div>
@@ -68,7 +87,8 @@ const services = [
         <div 
           v-for="(item, index) in services" 
           :key="index"
-          class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 border border-gray-100 flex flex-col hover:-translate-y-1 cursor-pointer"
+          class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-500 border border-gray-100 flex flex-col hover:-translate-y-1 cursor-pointer reveal-item"
+          :style="{ transitionDelay: (index * 60) + 'ms' }"
         >
           <!-- Top: Image Window -->
           <div class="aspect-[4/3] w-full overflow-hidden relative bg-gray-100">

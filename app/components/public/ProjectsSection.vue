@@ -96,11 +96,27 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="projects" class="bg-white py-12 lg:py-16">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6">
+  <section id="projects" class="bg-[#F8FAFC] min-h-screen flex flex-col justify-center py-20 lg:py-24 relative overflow-hidden">
+    
+    <!-- Immersive Topographic Background Image (Parallax Layer in Clipped Wrapper) -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="absolute -inset-y-40 inset-x-0 opacity-[0.12] mix-blend-multiply parallax-layer" data-parallax-speed="-0.06">
+        <img src="https://images.unsplash.com/photo-1549492423-4002b9a53bb0?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover filter grayscale contrast-125" />
+      </div>
+    </div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 relative z-10 reveal-section">
+      
+      <!-- Drafting Sheet Frame Accents -->
+      <div class="absolute -inset-4 sm:-inset-8 border border-gray-900/[0.08] pointer-events-none hidden lg:block"></div>
+      <div class="absolute -inset-2 sm:-inset-4 border border-gray-900/[0.04] pointer-events-none hidden lg:block"></div>
+      
+      <!-- Coordinate Labels in Corners -->
+      <div class="hidden lg:flex absolute -top-8 -left-4 font-mono text-[9px] text-gray-400 tracking-tighter opacity-60">N 14° 35' 5.7"</div>
+      <div class="hidden lg:flex absolute -top-8 -right-4 font-mono text-[9px] text-gray-400 tracking-tighter opacity-60">E 120° 59' 0.4"</div>
 
       <!-- Section Header -->
-      <div class="text-center mb-12 lg:mb-16">
+      <div class="text-center mb-16 lg:mb-20 reveal-item">
         <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">What We Do</span>
         <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
           Projects
@@ -109,7 +125,7 @@ onUnmounted(() => {
 
       <!-- Carousel Container -->
       <div 
-        class="relative w-full aspect-[4/3] lg:aspect-[21/9] overflow-hidden rounded-xl bg-gray-900 shadow-2xl group touch-pan-y"
+        class="relative w-full aspect-[4/3] lg:aspect-[21/9] overflow-hidden rounded-xl bg-gray-900 shadow-2xl group touch-pan-y reveal-item delay-100"
         @mouseenter="pauseTimer"
         @mouseleave="resumeTimer"
         @touchstart="onTouchStart"
