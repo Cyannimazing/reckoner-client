@@ -1,0 +1,100 @@
+<script setup lang="ts">
+import AuthService from '~/composables/api/AuthService'
+
+const colorMode = useColorMode()
+const loading = ref(false)
+const errorMessage = ref('')
+
+const form = reactive({
+  email: '',
+  password: '',
+})
+
+const isDark = computed(() => colorMode.value === 'dark')
+const toggleTheme = () => {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+}
+
+const submit = async () => {
+  loading.value = true
+  errorMessage.value = ''
+
+  try {
+    const response: any = await AuthService.login(form)
+
+    if (import.meta.client) {
+      localStorage.setItem('_token', response?.token ?? '')
+      localStorage.setItem('_user', JSON.stringify(response?.user ?? {}))
+    }
+
+    await navigateTo('/dashboard')
+  } catch (error: any) {
+    errorMessage.value = error?.message || 'Unable to login. Please try again.'
+  } finally {
+    loading.value = false
+  }
+}
+</script>
+
+<template>
+  <div class="flex min-h-screen">
+    <!-- Left side (Hero/Branding) -->
+    <div class="relative hidden w-full flex-1 flex-col items-center justify-center overflow-hidden bg-brand-950 lg:flex">
+      <!-- Abstract gradient shapes based on theme -->
+      <div class="absolute inset-0 z-0 opacity-50 dark:opacity-40">
+        <div class="absolute -left-32 -top-32 h-[32rem] w-[32rem] rounded-full bg-brand-500 mix-blend-screen blur-[128px]"></div>
+        <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-highlight mix-blend-screen blur-[128px]"></div>
+      </div>
+      <div class="relative z-10 flex flex-col items-center p-12 text-center text-white">
+        <div class="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 shadow-xl backdrop-blur-xl border border-white/20">
+          <UIcon name="i-heroicons-square-3-stack-3d" class="h-10 w-10 text-brand-200" />
+        </div>
+        <h1 class="mb-4 text-5xl font-extrabold tracking-tight drop-shadow-sm">Reckoner</h1>
+        <p class="max-w-md text-lg text-brand-100/80 font-medium">Manage your business with clarity. Elegant, precise, and built for modern teams.</p>
+      </div>
+    </div>
+
+    <!-- Right side (Form) -->
+    <div class="flex flex-1 flex-col justify-center bg-brand-neutral-50 px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24 dark:bg-brand-neutral-950 text-brand-neutral-900 dark:text-brand-neutral-100">
+      <div class="mx-auto w-full max-w-sm lg:w-96 relative">
+        <!-- Floating theme toggle -->
+        <div class="absolute -top-6 right-0 flex lg:hidden">
+           <UButton variant="ghost" color="neutral" :icon="isDark ? 'i-heroicons-sun' : 'i-heroicons-moon'" @click="toggleTheme" aria-label="Toggle theme" class="rounded-full cursor-pointer" />
+        </div>
+
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold tracking-tight">Welcome back</h2>
+          <p class="mt-2 text-sm text-brand-neutral-500 dark:text-brand-neutral-400">Sign in to your account</p>
+        </div>
+
+        <form class="space-y-6" @submit.prevent="submit">
+          <UFormField label="Email" name="email">
+            <UInput v-model="form.email" type="email" placeholder="admin@reckoner.com" class="w-full" size="lg" autofocus icon="i-heroicons-envelope" />
+          </UFormField>
+
+          <UFormField label="Password" name="password">
+            <UInput v-model="form.password" type="password" placeholder="••••••••" class="w-full" size="lg" icon="i-heroicons-lock-closed" />
+            
+            <template #help>
+               <div class="flex w-full justify-end mt-1">
+                 <a href="#" class="text-xs font-medium text-brand-600 hover:text-brand-500 dark:text-brand-400 cursor-pointer">Forgot password?</a>
+               </div>
+            </template>
+          </UFormField>
+
+          <p v-if="errorMessage" class="text-sm text-red-500 p-3 bg-red-50 dark:bg-red-950/20 rounded-md border border-red-200 dark:border-red-900/50">
+            {{ errorMessage }}
+          </p>
+
+          <UButton type="submit" block :loading="loading" size="xl" color="primary" class="mt-4 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/30 transition-shadow cursor-pointer">
+            Sign in
+          </UButton>
+        </form>
+
+        <div class="mt-8 flex items-center justify-end border-t border-brand-neutral-200 pt-6 dark:border-brand-neutral-800">
+          <UButton variant="ghost" color="neutral" :icon="isDark ? 'i-heroicons-sun' : 'i-heroicons-moon'" @click="toggleTheme" aria-label="Toggle theme" class="hidden lg:flex rounded-full cursor-pointer" />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

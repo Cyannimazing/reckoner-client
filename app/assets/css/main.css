@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --color-brand-50: #f7f5fa;
+  --color-brand-100: #e5eaf5;
+  --color-brand-200: #d0bdf4;
+  --color-brand-300: #b39de0;
+  --color-brand-400: #9b81ca;
+  --color-brand-500: #8458b3;
+  --color-brand-600: #6a4690;
+  --color-brand-700: #52376e;
+  --color-brand-800: #3c2950;
+  --color-brand-900: #271b34;
+  --color-brand-950: #1a1223;
+
+  --color-brand-neutral-50: #f8f9fc;
+  --color-brand-neutral-100: #e5eaf5;
+  --color-brand-neutral-200: #cdd1de;
+  --color-brand-neutral-300: #b5b9c7;
+  --color-brand-neutral-400: #9aa0b0;
+  --color-brand-neutral-500: #80869a;
+  --color-brand-neutral-600: #676c7d;
+  --color-brand-neutral-700: #494d5f;
+  --color-brand-neutral-800: #373a48;
+  --color-brand-neutral-900: #252831;
+  --color-brand-neutral-950: #17181e;
+
+  --color-highlight: #a0d2eb;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply min-h-screen bg-brand-neutral-50 text-brand-neutral-900 antialiased dark:bg-brand-neutral-950 dark:text-brand-neutral-100;
+  }
+
+  #__nuxt {
+    @apply min-h-screen;
+  }
+}
