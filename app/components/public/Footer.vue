@@ -42,8 +42,8 @@ const socials = [
               <img :src="logoImage" alt="Reckoner logo" class="h-11 w-11 object-contain" />
             </div>
             <div class="leading-tight">
-              <span class="text-[19px] font-bold tracking-tight text-white">Reckoner</span>
-              <span class="block text-[11px] font-bold tracking-widest text-green-500">GEOSPATIAL</span>
+              <span class="font-['Times_New_Roman'] text-[28px] font-normal tracking-tight text-white">Reckoner</span>
+              <span class="block font-['Times_New_Roman'] text-[15px] font-normal tracking-widest text-green-500">GEOSPATIAL</span>
             </div>
           </NuxtLink>
 

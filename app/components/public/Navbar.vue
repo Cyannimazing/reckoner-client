@@ -34,11 +34,11 @@ const navigation = [
           </div>
           <div class="leading-tight">
             <span
-              class="text-[19px] font-bold tracking-tight transition-colors duration-500"
+              class="font-['Times_New_Roman'] text-[28px] font-normal tracking-tight transition-colors duration-500"
               :class="scrolled ? 'text-gray-900' : 'text-white'"
             >Reckoner</span>
             <span
-              class="block text-[11px] font-bold tracking-widest transition-colors duration-500"
+              class="block font-['Times_New_Roman'] text-[15px] font-normal tracking-widest transition-colors duration-500"
               :class="scrolled ? 'text-green-700' : 'text-green-400'"
             >GEOSPATIAL</span>
           </div>
