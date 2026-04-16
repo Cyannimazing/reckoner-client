@@ -16,6 +16,15 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon-logo.png',
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/favicon-logo.png',
+        },
+        {
           rel: 'preconnect',
           href: 'https://fonts.googleapis.com',
         },

@@ -14,7 +14,7 @@
       <!-- Symmetrical Banner Insert (Matches Projects/Contact Grid) -->
       <div class="relative w-full h-[450px] overflow-hidden shadow-2xl rounded-2xl bg-gray-100 group reveal-item">
         <img 
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000" 
+          src="~/assets/Images/status-image2.jpg" 
           alt="Precision Geodetic Survey"
           class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
         />

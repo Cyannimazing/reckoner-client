@@ -17,7 +17,7 @@ const serviceKeywords = [
         <img
           src="~/assets/Images/heroImage.jfif"
           alt="Surveying and construction site"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover scale-x-[-1]"
         />
         <!-- Coordinate Scan Overlay -->
         <div class="absolute inset-0 z-1 opacity-[0.05] pointer-events-none" 

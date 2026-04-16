@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import logoImage from '~/assets/Images/favicon-logo.png'
+
 const currentYear = new Date().getFullYear()
 
 const quickLinks = [
@@ -36,8 +38,8 @@ const socials = [
         <div class="lg:col-span-1 flex flex-col gap-6">
           <!-- Logo -->
           <NuxtLink to="/" class="flex items-center gap-3 w-fit">
-            <div class="flex h-11 w-11 items-center justify-center rounded-full bg-green-700 text-white shadow-md shrink-0">
-              <UIcon name="i-heroicons-globe-americas" class="h-6 w-6" />
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-md shrink-0 overflow-hidden">
+              <img :src="logoImage" alt="Reckoner logo" class="h-11 w-11 object-contain" />
             </div>
             <div class="leading-tight">
               <span class="text-[19px] font-bold tracking-tight text-white">Reckoner</span>

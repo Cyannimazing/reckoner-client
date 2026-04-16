@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import logoImage from '~/assets/Images/favicon-logo.png'
+
 const props = defineProps<{
   scrolled: boolean
 }>()
@@ -25,10 +27,10 @@ const navigation = [
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center gap-3 cursor-pointer shrink-0">
           <div
-            class="flex h-11 w-11 items-center justify-center rounded-full bg-green-700 text-white shadow-lg transition-all duration-500"
-            :class="scrolled ? 'scale-90' : 'scale-100'"
+            class="flex h-14 w-14 items-center justify-center rounded-full transition-all duration-500 overflow-hidden"
+            :class="scrolled ? 'bg-transparent' : 'bg-white'"
           >
-            <UIcon name="i-heroicons-globe-americas" class="h-6 w-6" />
+            <img :src="logoImage" alt="Reckoner logo" class="h-11 w-11 object-contain" />
           </div>
           <div class="leading-tight">
             <span

@@ -1,50 +1,60 @@
 <script setup lang="ts">
+import asBuiltImage from '~/assets/Images/as-build.jpg'
+import boundaryRelocationImage from '~/assets/Images/boundary-relocation-1.jpg'
+import caapHeightLimitImage from '~/assets/Images/caap-height-limit.jpg'
+import droneSurveyImage from '~/assets/Images/drone-survey.webp'
+import hydrographicSurveyImage from '~/assets/Images/hydrographic-survey.jpg'
+import originalResurveyImage from '~/assets/Images/original-resurvey.jpg'
+import structuralSurveyImage from '~/assets/Images/Structural-survey.jpg'
+import subdivisionConsolidationImage from '~/assets/Images/subdivision-consolidation.jpg'
+import topographicSurveyImage from '~/assets/Images/topographic-survey-1.jpg'
+
 // Corporate Card Grid Layout
 const services = [
   {
     title: 'Topographic Survey',
     description: 'Comprehensive terrain mapping and elevation analysis for engineering, construction, and land development projects.',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
+    image: topographicSurveyImage,
   },
   {
     title: 'Boundary Relocation Survey',
     description: 'Precise determination and re-establishment of property lines and corners based on original legal descriptions.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800',
+    image: boundaryRelocationImage,
   },
   {
     title: 'Subdivision & Consolidation',
     description: 'Expert division of large tracts into smaller lots or merging of adjacent parcels for optimal land utilization.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
+    image: subdivisionConsolidationImage,
   },
   {
     title: 'Structural Surveying',
     description: 'Detailed structural measurements meeting strict compliance requirements for local building and fencing permits.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800',
+    image: structuralSurveyImage,
   },
   {
     title: 'As-Built Survey',
     description: 'Accurate documentation of completed structural additions or modifications to verify conformance to design plans.',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800',
+    image: asBuiltImage,
   },
   {
     title: 'Original & Re-Survey',
     description: 'Complete and thorough initial parcel assessments or re-evaluations to definitively resolve land boundary discrepancies.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800',
+    image: originalResurveyImage,
   },
   {
     title: 'Hydrographic Survey',
     description: 'Advanced measurement and description of the physical features of bodies of water and adjacent coastal environments.',
-    image: 'https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&q=80&w=800',
+    image: hydrographicSurveyImage,
   },
   {
     title: 'CAAP & Height Limitation',
     description: 'Specialized regulatory surveys ensuring structures comply with aviation authority height and safety airspace limits.',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?auto=format&fit=crop&q=80&w=800',
+    image: caapHeightLimitImage,
   },
   {
     title: 'Drone & Aerial Mapping',
     description: 'High-resolution aerial photogrammetry providing rapid, accurate, and cost-effective topographic data and 3D modeling.',
-    image: 'https://images.unsplash.com/photo-1508444845599-5c89863b1c44?auto=format&fit=crop&q=80&w=800',
+    image: droneSurveyImage,
   },
 ]
 </script>
