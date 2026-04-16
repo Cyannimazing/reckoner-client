@@ -58,15 +58,13 @@
   .reveal-item {
     opacity: 0;
     transform: translateY(15px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: blur(4px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
   }
 
   .reveal-item.is-visible {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 
   /* Stagger Delays (Faster intervals) */

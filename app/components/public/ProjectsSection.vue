@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
+import boundaryRelocationImage from '~/assets/Images/boundary-relocation-1.jpg'
+import topographicSurveyImage from '~/assets/Images/topographic-survey-1.jpg'
+import structuralSurveyImage from '~/assets/Images/Structural-survey.jpg'
 
 // Carousel State
 const currentIndex = ref(0)
@@ -9,19 +12,19 @@ const projects = [
     id: '01',
     title: 'Boundary Relocation Survey',
     description: 'Comprehensive boundary verification for residential and commercial developments ensuring accurate land positioning and compliance.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000'
+    image: boundaryRelocationImage
   },
   {
     id: '02',
     title: 'Topographic Mapping',
     description: 'Detailed elevation and terrain analysis using advanced drone photogrammetry and traditional total station techniques.',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=2000'
+    image: topographicSurveyImage
   },
   {
     id: '03',
     title: 'Construction Staking',
     description: 'High-precision layout of proposed improvements, ensuring construction strictly adheres to architectural and engineering plans.',
-    image: 'https://images.unsplash.com/photo-1508444845599-5c89863b1c44?auto=format&fit=crop&q=80&w=2000'
+    image: structuralSurveyImage
   }
 ]
 
@@ -105,7 +108,7 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 relative z-10 reveal-section">
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 relative z-10">
       
       <!-- Drafting Sheet Frame Accents -->
       <div class="absolute -inset-4 sm:-inset-8 border border-gray-900/[0.08] pointer-events-none hidden lg:block"></div>
