@@ -99,7 +99,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="projects" class="bg-[#F8FAFC] min-h-screen flex flex-col justify-center py-20 lg:py-24 relative overflow-hidden">
+  <section id="projects" class="bg-[#F8FAFC] min-h-screen flex flex-col justify-center pt-10 pb-0 lg:py-24 relative overflow-hidden">
     
     <!-- Immersive Topographic Background Image (Parallax Layer in Clipped Wrapper) -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -119,7 +119,7 @@ onUnmounted(() => {
       <div class="hidden lg:flex absolute -top-8 -right-4 font-mono text-[9px] text-gray-400 tracking-tighter opacity-60">E 120° 59' 0.4"</div>
 
       <!-- Section Header -->
-      <div class="text-center mb-16 lg:mb-20 reveal-item">
+      <div class="text-center mb-8 lg:mb-20 reveal-item">
         <span class="font-sans text-green-700 text-xs font-bold tracking-[0.3em] uppercase mb-4 block">What We Do</span>
         <h2 class="font-serif text-4xl sm:text-5xl lg:text-[56px] font-light text-gray-900 leading-tight tracking-tight">
           Projects
@@ -128,7 +128,7 @@ onUnmounted(() => {
 
       <!-- Carousel Container -->
       <div 
-        class="relative w-screen lg:w-full aspect-4/3 lg:aspect-21/9 overflow-hidden rounded-none lg:rounded-xl bg-gray-900 shadow-2xl group touch-pan-y reveal-item delay-100 -mx-4 sm:-mx-6 lg:mx-0"
+        class="relative w-screen lg:w-full h-[calc(100vh-120px)] lg:h-auto lg:aspect-21/9 overflow-hidden rounded-none lg:rounded-xl bg-gray-900 shadow-2xl group touch-pan-y reveal-item delay-100 -mx-4 sm:-mx-6 lg:mx-0"
         @mouseenter="pauseTimer"
         @mouseleave="resumeTimer"
         @touchstart="onTouchStart"
