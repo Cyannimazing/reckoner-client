@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="py-10 lg:py-14 relative overflow-hidden" style="background-color: #f0f7ff; background-image: linear-gradient(rgba(59,130,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.08) 1px, transparent 1px), linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;">
+  <section id="contact" class="py-10 lg:py-14 relative overflow-hidden scroll-mt-18" style="background-color: #f0f7ff; background-image: linear-gradient(rgba(59,130,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.08) 1px, transparent 1px), linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;">
     
 
 <div class="max-w-360 mx-auto px-4 relative z-10 reveal-section">
