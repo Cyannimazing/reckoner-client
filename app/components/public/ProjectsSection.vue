@@ -128,7 +128,7 @@ onUnmounted(() => {
 
       <!-- Carousel Container -->
       <div 
-        class="relative w-full aspect-[4/3] lg:aspect-[21/9] overflow-hidden rounded-xl bg-gray-900 shadow-2xl group touch-pan-y reveal-item delay-100"
+        class="relative w-screen lg:w-full aspect-4/3 lg:aspect-21/9 overflow-hidden rounded-none lg:rounded-xl bg-gray-900 shadow-2xl group touch-pan-y reveal-item delay-100 -mx-4 sm:-mx-6 lg:mx-0"
         @mouseenter="pauseTimer"
         @mouseleave="resumeTimer"
         @touchstart="onTouchStart"
