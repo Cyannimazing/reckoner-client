@@ -42,18 +42,18 @@
           
           <!-- Stats Group (Proper Mobile Floating Hub) -->
           <div class="flex flex-col lg:flex-row shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden w-full lg:w-auto shrink-0 reveal-item delay-100">
-            <div class="bg-[#0b0c10]/95 backdrop-blur-sm text-white flex items-center justify-center gap-6 lg:flex-col lg:gap-1 px-8 py-4 lg:px-14 lg:py-4 shrink-0 border-b lg:border-b-0 lg:border-r border-white/10">
+            <div class="bg-[#0b0c10] text-white flex items-center justify-center gap-6 lg:flex-col lg:gap-1 px-8 py-4 lg:px-14 lg:py-4 shrink-0 border-b lg:border-b-0 lg:border-r border-white/10">
               <span class="font-serif text-3xl lg:text-5xl font-bold text-white leading-none tracking-tight">147</span>
               <span class="font-sans text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Completed Projects</span>
             </div>
-            <div class="bg-red-900/95 backdrop-blur-sm text-white flex items-center justify-center gap-6 lg:flex-col lg:gap-1 px-8 py-4 lg:px-14 lg:py-4 shrink-0 reveal-item delay-200">
+            <div class="bg-red-900 text-white flex items-center justify-center gap-6 lg:flex-col lg:gap-1 px-8 py-4 lg:px-14 lg:py-4 shrink-0 reveal-item delay-200">
               <span class="font-serif text-3xl lg:text-5xl font-bold text-white leading-none tracking-tight">25<span class="text-2xl ml-0.5">+</span></span>
               <span class="font-sans text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-red-100">Years Experience</span>
             </div>
           </div>
 
           <!-- Quote Group (Restored Mobile Framing) -->
-          <div class="bg-white/95 backdrop-blur-md flex-1 flex items-center px-8 py-5 lg:px-12 lg:py-4 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl border border-gray-100 w-full max-w-xl reveal-item delay-300">
+          <div class="bg-white flex-1 flex items-center px-8 py-5 lg:px-12 lg:py-4 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl border border-gray-100 w-full max-w-xl reveal-item delay-300">
             <p class="text-gray-900 text-[11px] lg:text-[14px] leading-relaxed font-medium">
               "We provide accurate and reliable land surveying solutions, helping our clients navigate their projects
               with confidence and ensuring a positive impact on the communities we serve."
