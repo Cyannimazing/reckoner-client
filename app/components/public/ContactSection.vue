@@ -1,20 +1,8 @@
 <template>
-  <section id="contact" class="bg-gray-50 py-10 lg:py-14 border-t border-gray-100 relative overflow-hidden">
+  <section id="contact" class="py-10 lg:py-14 relative overflow-hidden" style="background-color: #f0f7ff; background-image: linear-gradient(rgba(59,130,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.08) 1px, transparent 1px), linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;">
     
-    <!-- Background Wrapper with its own clipping to prevent bleeding -->
-    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      <!-- Unique Geodetic Land-Pattern Background (Parallax Layer) -->
-      <div class="absolute -inset-y-40 inset-x-0 opacity-[0.08] mix-blend-multiply parallax-layer" data-parallax-speed="-0.05">
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover filter grayscale contrast-125 brightness-110" />
-      </div>
 
-      <!-- Architectural Grid Overlay (Parallax Layer) -->
-      <div class="absolute -inset-y-40 inset-x-0 opacity-[0.03] parallax-layer" data-parallax-speed="-0.02"
-           style="background-image: linear-gradient(#15803d 1px, transparent 1px), linear-gradient(90deg, #15803d 1px, transparent 1px); background-size: 40px 40px;">
-      </div>
-    </div>
-
-    <div class="max-w-[1440px] mx-auto px-4 relative z-10 reveal-section">
+<div class="max-w-360 mx-auto px-4 relative z-10 reveal-section">
 
       <!-- Section Header (Minimized for Insert Feel) -->
       <div class="text-center mb-8 reveal-item">

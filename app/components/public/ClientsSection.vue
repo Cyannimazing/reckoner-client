@@ -1,10 +1,11 @@
 <template>
-  <section class="relative bg-[#0b0c10] py-16 border-b border-white/10 overflow-hidden">
-    <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-green-600 hidden lg:block"></div>
+  <section class="relative bg-white py-16 border-y border-gray-200 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none"
+         style="background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px); background-size: 24px 24px; opacity: 0.45;"></div>
 
 
     <div class="max-w-360 mx-auto px-4 sm:px-6 lg:px-12">
-      <h2 class="text-center font-serif text-3xl lg:text-4xl text-white mb-12 reveal-item">
+      <h2 class="text-center font-serif text-3xl lg:text-4xl text-gray-900 mb-12 reveal-item">
         Our Clients
       </h2>
     </div>
