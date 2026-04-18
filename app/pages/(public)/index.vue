@@ -7,6 +7,7 @@ definePageMeta({
 <template>
   <div>
     <PublicHeroSection />
+    <PublicClientsSection />
     <PublicStatsSection />
     <PublicServicesSection />
     <PublicProjectsSection />

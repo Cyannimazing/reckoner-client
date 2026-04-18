@@ -1,5 +1,5 @@
 <template>
-  <section class="relative bg-gray-50 pt-16 pb-40 lg:pt-20 lg:pb-32 border-y border-gray-100">
+  <section class="relative bg-white pt-16 pb-40 lg:pt-20 lg:pb-32 border-y border-gray-100">
     
     <!-- Background Wrapper with its own clipping to prevent bleeding -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -16,7 +16,7 @@
         <img 
           src="~/assets/Images/status-image2.jpg" 
           alt="Precision Geodetic Survey"
-          class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+          class="w-full h-full object-cover"
         />
         
         <!-- Technical Scanning Grid Overlay -->

@@ -28,7 +28,9 @@ const serviceKeywords = [
         </div>
 
         <div class="absolute inset-0 bg-gradient-to-r from-gray-950/85 via-gray-900/60 to-gray-900/30"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-gray-950/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-transparent to-gray-950/20"></div>
+        <!-- Deep bottom fade to bleed into clients section -->
+        <div class="absolute bottom-0 inset-x-0 h-40 bg-linear-to-t from-[#0b0c10] to-transparent z-1 pointer-events-none"></div>
       </div>
 
       <!-- Left Accent Bar -->
