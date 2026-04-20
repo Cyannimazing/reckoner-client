@@ -99,7 +99,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="projects" class="bg-[#F8FAFC] min-h-screen flex flex-col justify-center pt-10 pb-0 lg:py-24 relative overflow-hidden">
+  <section id="projects" class="scroll-mt-12 bg-[#F8FAFC] min-h-screen flex flex-col justify-center pt-10 pb-0 lg:py-24 relative overflow-hidden">
     
     <!-- Immersive Topographic Background Image (Parallax Layer in Clipped Wrapper) -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -128,7 +128,7 @@ onUnmounted(() => {
 
       <!-- Carousel Container -->
       <div 
-        class="relative w-screen lg:w-full h-[calc(100vh-120px)] lg:h-auto lg:aspect-21/9 overflow-hidden rounded-none lg:rounded-xl bg-gray-900 shadow-2xl group touch-pan-y reveal-item delay-100 -mx-4 sm:-mx-6 lg:mx-0"
+        class="relative w-screen lg:w-full h-[calc(100vh-120px)] lg:h-auto lg:aspect-video overflow-hidden rounded-none lg:rounded-xl bg-gray-900 shadow-2xl group touch-pan-y reveal-item delay-100 -mx-4 sm:-mx-6 lg:mx-0"
         @mouseenter="pauseTimer"
         @mouseleave="resumeTimer"
         @touchstart="onTouchStart"
@@ -191,49 +191,47 @@ onUnmounted(() => {
             </div>
           </Transition>
 
-          <!-- Bottom Area: Controls (Desktop Only) -->
-          <div class="hidden lg:flex justify-between items-center pointer-events-auto">
-            
+          <!-- Bottom Area: Controls -->
+          <div class="flex justify-between items-center pointer-events-auto">
+
             <!-- Browse All Link -->
-            <a href="#" class="group/btn cursor-pointer flex items-center gap-4 text-white hover:text-green-400 transition-colors duration-700 ease-out">
-              <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center transition-all duration-700 ease-out group-hover/btn:border-green-400 group-hover/btn:bg-green-400/10">
-                <UIcon name="i-heroicons-arrow-up-right" class="w-5 h-5 transition-transform duration-700 ease-out group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+            <a href="#" class="group/btn cursor-pointer flex items-center gap-3 lg:gap-4 text-white hover:text-green-400 transition-colors duration-700 ease-out">
+              <div class="w-9 h-9 lg:w-12 lg:h-12 rounded-full border border-white/30 flex items-center justify-center transition-all duration-700 ease-out group-hover/btn:border-green-400 group-hover/btn:bg-green-400/10">
+                <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-700 ease-out group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
               </div>
-              <span class="font-sans text-[13px] font-bold tracking-[0.15em] uppercase">Browse All Projects</span>
+              <span class="font-sans text-[11px] lg:text-[13px] font-bold tracking-[0.15em] uppercase">Browse All Projects</span>
             </a>
 
-            <!-- Navigation Arrows -->
-            <div class="flex gap-4">
-              <button 
-                @click="prevSlide" 
+            <!-- Mobile Pagination Dots -->
+            <div class="flex lg:hidden items-center gap-2">
+              <button
+                v-for="(_, index) in projects"
+                :key="index"
+                @click="currentIndex = index; resetTimer()"
+                class="h-2 rounded-full transition-all duration-500 ease-out focus:outline-none"
+                :class="currentIndex === index ? 'w-8 bg-green-500' : 'w-2 bg-white/40 hover:bg-white/80'"
+                :aria-label="`Jump to project ${index + 1}`"
+              ></button>
+            </div>
+
+            <!-- Desktop Navigation Arrows -->
+            <div class="hidden lg:flex gap-4">
+              <button
+                @click="prevSlide"
                 class="group/nav w-12 h-12 cursor-pointer rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:border-white transition-all duration-300 focus:outline-none"
                 aria-label="Previous project"
               >
-                <!-- Arrow left shifts slightly left -->
                 <UIcon name="i-heroicons-arrow-left" class="w-5 h-5 text-white group-hover/nav:text-gray-900 group-hover/nav:-translate-x-1 transition-all duration-300 ease-out" />
               </button>
-              <button 
-                @click="nextSlide" 
+              <button
+                @click="nextSlide"
                 class="group/nav w-12 h-12 cursor-pointer rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:border-white transition-all duration-300 focus:outline-none"
                 aria-label="Next project"
               >
-                <!-- Arrow right shifts slightly right -->
                 <UIcon name="i-heroicons-arrow-right" class="w-5 h-5 text-white group-hover/nav:text-gray-900 group-hover/nav:translate-x-1 transition-all duration-300 ease-out" />
               </button>
             </div>
 
-          </div>
-
-          <!-- Mobile Pagination Dots (Mobile Only) -->
-          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex lg:hidden items-center gap-2 pointer-events-auto z-30">
-            <button 
-              v-for="(_, index) in projects" 
-              :key="index"
-              @click="currentIndex = index; resetTimer()"
-              class="h-2 rounded-full transition-all duration-500 ease-out focus:outline-none"
-              :class="currentIndex === index ? 'w-8 bg-green-500' : 'w-2 bg-white/40 hover:bg-white/80'"
-              :aria-label="`Jump to project ${index + 1}`"
-            ></button>
           </div>
 
 

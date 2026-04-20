@@ -1,11 +1,5 @@
 <script setup lang="ts">
-const scrolled = ref(false)
-
-onMounted(() => {
-  window.addEventListener('scroll', () => {
-    scrolled.value = window.scrollY > 20
-  })
-})
+const scrolled = ref(true)
 </script>
 
 <template>

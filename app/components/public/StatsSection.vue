@@ -1,3 +1,64 @@
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+
+const count1 = ref(0)
+const count2 = ref(0)
+const statsCardRef = ref<HTMLElement | null>(null)
+let observer: IntersectionObserver | null = null
+let isAnimating = false
+
+const rollNumber = (target: number, setter: (v: number) => void) => {
+  const totalDuration = 1200
+  const startTime = Date.now()
+
+  const tick = () => {
+    if (!isAnimating) return
+    const progress = (Date.now() - startTime) / totalDuration
+
+    if (progress >= 1) {
+      setter(target)
+      return
+    }
+
+    setter(Math.floor(Math.random() * (target + 1)))
+    const delay = 30 + Math.floor(progress * progress * 120)
+    setTimeout(tick, delay)
+  }
+
+  tick()
+}
+
+const startAnimation = () => {
+  if (isAnimating) return
+  isAnimating = true
+  count1.value = 0
+  count2.value = 0
+  rollNumber(147, v => count1.value = v)
+  rollNumber(25, v => count2.value = v)
+  setTimeout(() => { isAnimating = false }, 1400)
+}
+
+onMounted(async () => {
+  await nextTick()
+  const el = statsCardRef.value
+  if (!el) return
+
+  observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      startAnimation()
+    } else {
+      isAnimating = false
+      count1.value = 0
+      count2.value = 0
+    }
+  }, { threshold: 0.3 })
+
+  observer.observe(el)
+})
+
+onUnmounted(() => observer?.disconnect())
+</script>
+
 <template>
   <section class="relative bg-white pt-16 pb-40 lg:pt-20 lg:pb-32 border-y border-gray-100">
     
@@ -41,13 +102,13 @@
         <div class="flex flex-col lg:flex-row w-full max-w-5xl mx-auto gap-4 lg:gap-6 items-center lg:items-stretch justify-center">
           
           <!-- Stats Group (Proper Mobile Floating Hub) -->
-          <div class="flex flex-col lg:flex-row shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden w-full lg:w-auto shrink-0 reveal-item delay-100">
+          <div ref="statsCardRef" class="flex flex-col lg:flex-row shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-xl overflow-hidden w-full lg:w-auto shrink-0 reveal-item delay-100">
             <div class="bg-[#0b0c10] text-white flex items-center justify-center gap-6 lg:flex-col lg:gap-1 px-8 py-4 lg:px-14 lg:py-4 shrink-0 border-b lg:border-b-0 lg:border-r border-white/10">
-              <span class="font-serif text-3xl lg:text-5xl font-bold text-white leading-none tracking-tight">147</span>
+              <span class="font-serif text-3xl lg:text-5xl font-bold text-white leading-none tracking-tight">{{ count1 }}</span>
               <span class="font-sans text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Completed Projects</span>
             </div>
             <div class="bg-red-900 text-white flex items-center justify-center gap-6 lg:flex-col lg:gap-1 px-8 py-4 lg:px-14 lg:py-4 shrink-0 reveal-item delay-200">
-              <span class="font-serif text-3xl lg:text-5xl font-bold text-white leading-none tracking-tight">25<span class="text-2xl ml-0.5">+</span></span>
+              <span class="font-serif text-3xl lg:text-5xl font-bold text-white leading-none tracking-tight">{{ count2 }}<span class="text-2xl ml-0.5">+</span></span>
               <span class="font-sans text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-red-100">Years Experience</span>
             </div>
           </div>

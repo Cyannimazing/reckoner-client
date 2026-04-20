@@ -61,7 +61,7 @@ const services = [
 
 <template>
   <!-- Very soft corporate gray background -->
-  <section id="services" class="bg-[#F2F4F7] min-h-screen flex flex-col justify-center py-16 lg:py-20 border-y border-gray-200/50 relative overflow-hidden">
+  <section id="services" class="scroll-mt-12 bg-[#F2F4F7] min-h-screen flex flex-col justify-center py-10 lg:py-20 border-y border-gray-200/50 relative overflow-hidden">
     
     <!-- High-Impact Architectural Grid Background (Parallax Layer in Clipped Wrapper) -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const router = useRouter()
+const scrollTo = (id: string) => router.push(`/#${id}`)
+
 const serviceKeywords = [
   'Relocation', 'Topographic', 'Structural', 'As-Built',
   'CAAP Height Limitation', 'Hydrographic', 'Parcellary',
@@ -7,7 +10,7 @@ const serviceKeywords = [
 </script>
 
 <template>
-  <div class="relative">
+  <div id="home" class="relative">
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex flex-col overflow-visible pt-[72px]">
@@ -63,18 +66,18 @@ const serviceKeywords = [
 
           <!-- CTA Buttons -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 sm:gap-6 w-full sm:w-auto reveal-item delay-300">
-            <NuxtLink
-              to="/#contact"
+            <button
               class="inline-flex justify-center items-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white text-[16px] font-semibold rounded-xl shadow-xl shadow-green-900/40 hover:shadow-green-800/60 transition-all hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto text-center"
+              @click="scrollTo('contact')"
             >
               Get a quote
-            </NuxtLink>
-            <NuxtLink
-              to="/#services"
+            </button>
+            <button
               class="inline-flex justify-center items-center px-8 py-4 text-white hover:text-white text-[16px] font-medium rounded-xl border border-white/30 hover:border-white/60 hover:bg-white/10 backdrop-blur-sm transition-all hover:-translate-y-0.5 cursor-pointer w-full sm:w-auto text-center"
+              @click="scrollTo('services')"
             >
               Our Services
-            </NuxtLink>
+            </button>
           </div>
 
         </div>
