@@ -195,7 +195,7 @@ onUnmounted(() => {
           <div class="flex justify-between items-center pointer-events-auto">
 
             <!-- Browse All Link -->
-            <NuxtLink to="/(public)/projects" class="group/btn cursor-pointer flex items-center gap-3 lg:gap-4 text-white hover:text-green-400 transition-colors duration-700 ease-out">
+            <NuxtLink to="/projects" class="group/btn cursor-pointer flex items-center gap-3 lg:gap-4 text-white hover:text-green-400 transition-colors duration-700 ease-out">
               <div class="w-9 h-9 lg:w-12 lg:h-12 rounded-full border border-white/30 flex items-center justify-center transition-all duration-700 ease-out group-hover/btn:border-green-400 group-hover/btn:bg-green-400/10">
                 <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-700 ease-out group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
               </div>
