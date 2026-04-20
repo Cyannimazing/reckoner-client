@@ -15,11 +15,13 @@ const filtersRef = ref<HTMLElement | null>(null)
 const loadMoreRef = ref<HTMLElement | null>(null)
 const visibleCount = ref(6)
 const isLoadingMore = ref(false)
+const hasScrolledDown = ref(false)
 
 const pageSize = 6
-const paginationDelayMs = 1200
+const paginationDelayMs = 2200
 let loadObserver: IntersectionObserver | null = null
 let loadTimer: ReturnType<typeof setTimeout> | null = null
+let lastScrollY = 0
 
 const filterControls = [
   {
@@ -117,6 +119,21 @@ const loadMoreProjects = () => {
   }, paginationDelayMs)
 }
 
+const handleScroll = () => {
+  const currentScrollY = window.scrollY
+
+  if (currentScrollY > lastScrollY + 24) {
+    hasScrolledDown.value = true
+
+    const loadMoreBounds = loadMoreRef.value?.getBoundingClientRect()
+    if (loadMoreBounds && loadMoreBounds.top <= window.innerHeight + 240) {
+      loadMoreProjects()
+    }
+  }
+
+  lastScrollY = Math.max(currentScrollY, 0)
+}
+
 const handleDocumentClick = (event: MouseEvent) => {
   if (!filtersRef.value?.contains(event.target as Node)) {
     activeFilter.value = null
@@ -131,10 +148,12 @@ const statusStyle: Record<string, string> = {
 
 onMounted(() => {
   document.addEventListener('click', handleDocumentClick)
+  lastScrollY = window.scrollY
+  window.addEventListener('scroll', handleScroll, { passive: true })
 
   if (loadMoreRef.value) {
     loadObserver = new IntersectionObserver((entries) => {
-      if (entries.some(entry => entry.isIntersecting)) {
+      if (hasScrolledDown.value && entries.some(entry => entry.isIntersecting)) {
         loadMoreProjects()
       }
     }, {
@@ -148,6 +167,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.removeEventListener('click', handleDocumentClick)
+  window.removeEventListener('scroll', handleScroll)
   loadObserver?.disconnect()
   if (loadTimer) clearTimeout(loadTimer)
 })
@@ -155,6 +175,8 @@ onUnmounted(() => {
 watch([filterRegion, filterSector, filterService, filterStatus], () => {
   visibleCount.value = pageSize
   isLoadingMore.value = false
+  hasScrolledDown.value = false
+  lastScrollY = window.scrollY
   if (loadTimer) clearTimeout(loadTimer)
 })
 </script>
